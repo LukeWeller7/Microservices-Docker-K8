@@ -107,6 +107,20 @@ COPY files/index.html /usr/share/nginx/html/index.html #local path to index.html
 EXPOSE 80 #port
 CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
 ```
+```
+# Alternative Dockerfile option 
+# from which image
+FROM nginx
+
+# what to copy into the container from localhost - index.html
+COPY files/index.html /usr/share/nginx/html/
+
+# port 80
+EXPOSE 80
+
+# CMD specific instructions
+CMD ["nginx", "-g", "daemon off;"]
+```
 5. Build the docker image (same folder as Dockerfile file)
 ```
 docker build -t nginx_build:v1
@@ -130,3 +144,11 @@ docker tag nginx_build:v1 lpweller/nginx_build:v1
 docker push lpweller/nginx_build:v1
 ```
 
+
+
+
+ahskhan/node-deploy-k8:v2 3000:3000
+
+Take the given image provided, run the app, build your own image from this and push to dockerhub. Make notes on the steps you have taken Complete by 15:30
+
+by C.O.B Microservice images of app and db
