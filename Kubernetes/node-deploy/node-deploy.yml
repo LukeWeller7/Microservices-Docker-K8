@@ -1,0 +1,20 @@
+apiVersion: apps/v1 # which api to use for deployment
+kind: Deployment
+
+metadata:
+  name: node-deployment # name of deployment
+spec:
+  selector:
+    matchLabels:
+      app: node # look for this label to match with k8 service
+  replicas: 3 # Number of pods
+  template:
+    metadata:
+      labels:
+        app: node # This label connects to the service or any other k8 components
+    spec:
+      containers:
+      - name: node
+        image: lpweller/test-app:v4 # Use the image that runs the node with Sparta App
+        ports:
+        - containerPort: 3000 # What port to run the container on

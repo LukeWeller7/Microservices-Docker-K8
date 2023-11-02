@@ -62,7 +62,7 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-  type: LoadBalancer
+  type: LoadBalancer # Also can use NodePort
 ```
 7. Apply the service to the K8 Cluster
 ```
@@ -79,4 +79,4 @@ NAME            TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
 kubernetes      ClusterIP      10.96.0.1       <none>        443/TCP        151m
 nginx-service   LoadBalancer   10.101.224.32   localhost     80:32501/TCP   26m
 ```
-9. Go to the webrowser and access localhost:80 to find nginx page.
+9. Go to the webrowser and access localhost:80 to find nginx page. (If used NodePort go to port specified in Port from service)
