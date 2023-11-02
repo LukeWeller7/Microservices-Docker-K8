@@ -24,6 +24,14 @@
 
 - Kubernetes lets you use many Virtual Machines (VMs) on one server's CPU. The VMs keep apps separate, boosting security since one app can't freely access another's info.
 
+### 5 Benefits to KB
+
+- Open-Source
+- Automation of deployment and scalability
+- More portability with less chance of vendor lock-in
+- Cost savings
+- Increased DevOps efficiency for microservices architecture
+
 ### K8 Architecture Diagram
 
 ![](Kubernetes-Deployment.png)
