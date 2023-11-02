@@ -1,0 +1,20 @@
+apiVersion: apps/v1 # which api to use for deployment
+kind: Deployment
+
+metadata:
+  name: nginx-deployment # name of deployment
+spec:
+  selector:
+    matchLabels:
+      app: nginx # look for this label to match with k8 service
+  replicas: 3 # Number of pods
+  template:
+    metadata:
+      labels:
+        app: nginx # This label connects to the service or any other k8 components
+    spec:
+      containers:
+      - name: nginx
+        image: lpweller/nginx-254:latest # Use the image that runs the nginx with profile
+        ports:
+        - containerPort: 80 # What port to run the container on
