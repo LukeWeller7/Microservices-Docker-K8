@@ -62,3 +62,12 @@ docker build -t lpweller/test-db:vv .
 ```
 docker run -d -p 27017:27017 lpweller/test-db:v4
 ```
+
+
+New Dockerfile
+```
+FROM mongo
+COPY mongod.conf /etc/mongod.conf
+EXPOSE 27017
+CMD [ "mongod", "--config", "/etc/mongod.conf" ]
+```
