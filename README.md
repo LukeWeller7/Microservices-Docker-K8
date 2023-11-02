@@ -12,6 +12,27 @@
 
 - Docker is popular because it offers portability, consistency, and scalability for deploying applications in different environments. Docker containers are lightweight, isolated, and easy to deploy, making them a popular choice for modern application development and deployment.
 
+# K8
+
+### What is K8?
+
+- Kubernetes, a powerful tool used to manage and orchestrate containers (like virtualized machines) on a large scale. It simplifies deployment, scaling, and management of software applications. It is also open source.
+
+### Why K8?
+
+- It helps us efficiently manage multiple applications on one server. It does this by dividing them into virtual machines, which keeps them isolated and secure.
+
+- Kubernetes lets you use many Virtual Machines (VMs) on one server's CPU. The VMs keep apps separate, boosting security since one app can't freely access another's info.
+
+### K8 Architecture Diagram
+
+![](Kubernetes-Deployment.png)
+With Kubernetes you can deploy the app into multiple containers, this is similar to how you can deploy the app on multiple virtual machines however, with this you can have them all running on the same machine and operating system so they can all run on the same CPU. However, because they are all in sepereate containers they can't directly connect with each other providing security.
+
+![](Container_Evolution.svg)
+https://kubernetes.io/docs/concepts/overview/
+- This page provides a great overview on the architectural structure of using Kubernetes comparied to other methods as well as explaining what it is and why to use K8.
+
 
 ## Commands for Docker
 ```
@@ -46,7 +67,7 @@ cat index.html
 apt install nano
 sudo nano index.html
 ```
-## How to build an image 
+## How to build an image on Docker
 https://devopscube.com/build-docker-image/
 
 1. Set up file and folder structure
@@ -152,3 +173,9 @@ ahskhan/node-deploy-k8:v2 3000:3000
 Take the given image provided, run the app, build your own image from this and push to dockerhub. Make notes on the steps you have taken Complete by 15:30
 
 by C.O.B Microservice images of app and db
+
+
+
+Blocker: 
+- When attempting to run a container, it closes automatically. (Fixed)
+  - Add `sleep infinity` to the end of run command
